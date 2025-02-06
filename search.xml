@@ -11,6 +11,12 @@
         <content type="html"><![CDATA[<hr><span id="more"></span><h1 id="函数调用运算符重载"><a href="#函数调用运算符重载" class="headerlink" title="函数调用运算符重载"></a>函数调用运算符重载</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta"># <span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">person</span> <br>&#123;<br><br><span class="hljs-keyword">public</span>:<br><br><br><span class="hljs-type">int</span> m_a;<br><span class="hljs-type">int</span> m_b;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">operator</span><span class="hljs-params">()</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">return</span> a+b;<br>&#125;<br><br> &#125;; <br><br> <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test01</span><span class="hljs-params">()</span></span><br><span class="hljs-function"> </span>&#123;<br> <br><br> person p;<br> <span class="hljs-type">int</span> ret=<span class="hljs-built_in">p</span>(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>);<br> cout&lt;&lt;ret&lt;&lt;endl;<br><br> &#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><br><br><br><br><span class="hljs-built_in">test01</span>();<br><span class="hljs-built_in">system</span> (<span class="hljs-string">&quot;pause&quot;</span>);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span> ;<br><br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -23,6 +29,12 @@
       
         <content type="html"><![CDATA[<hr><span id="more"></span><h1 id="普通文件的分文件编写"><a href="#普通文件的分文件编写" class="headerlink" title="普通文件的分文件编写"></a>普通文件的分文件编写</h1><p>普通文件的分文件编写不适用于类模板的分文件编写</p><p>原因在于类模板成员函数的实例化时机，类模板的成员函数是在函数具体实例化时才会创建具体代码</p><p>所以当在.h文件中声明类模板,在.c文件中实现函数功能的这种方法是不可用的.</p><p>要想使文件正常使用,有两种方法:</p><p>1.在主文件中包含.c,而不是.h</p><p>​        原因:按照之前的包含.h.编译器并不会创建成员函数(因为没有实例化),所以也就不会去找函数的实现,</p><p>​          但是如果包含了.c,.c中包含着.h,编译器首先会读取.h中的内容,然后继续读取.c中的函数实现,这样就不                   会出现链接时的错误了.</p><p>2.将类模板函数的定义和实现写在同一个文件下,并将文件名后缀改为.hpp(约定俗成).</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
       
       
     </entry>
