@@ -8,7 +8,7 @@
       <link href="/2025/02/07/%E6%96%B0%E5%B9%B4%E9%9B%AA%E6%99%AF%EF%BC%88%E4%B9%9F%E5%B0%B1%E6%98%AF%E9%9A%8F%E6%89%8B%E4%B8%80%E6%8B%8D%EF%BC%89%EF%BC%88%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0test%EF%BC%89/"/>
       <url>/2025/02/07/%E6%96%B0%E5%B9%B4%E9%9B%AA%E6%99%AF%EF%BC%88%E4%B9%9F%E5%B0%B1%E6%98%AF%E9%9A%8F%E6%89%8B%E4%B8%80%E6%8B%8D%EF%BC%89%EF%BC%88%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0test%EF%BC%89/</url>
       
-        <content type="html"><![CDATA[<hr><span id="more"></span><h4 id="《雪后即景》"><a href="#《雪后即景》" class="headerlink" title="《雪后即景》"></a>《雪后即景》</h4><p>​    现代（与deepseek共创）</p><p>​  推门惊见雪满檐，<br>​  手抖拍照冻成狗。<br>​  美景虽好心已凉，<br>​  回屋喝汤暖心头。</p><iframe style=”width: 100%; aspect-ratio: 16/9;” src="//player.bilibili.com/player.html?isOutside=true&aid=113956857318034&bvid=BV1MMNHe1E7L&cid=28245822351&p=1&autoplay=0" width="100%" height="500"scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe><p><img src="https://pic1.imgdb.cn/item/67a5b4d2d0e0a243d4fc7f3d.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<hr><span id="more"></span><h4 id="《雪后即景》"><a href="#《雪后即景》" class="headerlink" title="《雪后即景》"></a>《雪后即景》</h4><p>​    现代（与deepseek共创）</p><p>​  推门惊见雪满檐，<br>​  手抖拍照冻成狗。<br>​  美景虽好心已凉，<br>​  回屋喝汤暖心头。</p><p><img src="https://pic1.imgdb.cn/item/67a5b4d2d0e0a243d4fc7f3d.jpg" alt="随手一拍就拍的这么好,肯定有天赋"></p>]]></content>
       
       
       <categories>
@@ -23,6 +23,31 @@
             <tag> 风景 </tag>
             
             <tag> 雪景 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>在blog上传视频</title>
+      <link href="/2025/02/07/%E5%9C%A8blog%E4%B8%8A%E4%BC%A0%E8%A7%86%E9%A2%91/"/>
+      <url>/2025/02/07/%E5%9C%A8blog%E4%B8%8A%E4%BC%A0%E8%A7%86%E9%A2%91/</url>
+      
+        <content type="html"><![CDATA[<hr><span id="more"></span><p>如何将B站视频放到自己的网站上(将B站作为图片图床使用)</p><p>首先在B站复制视频的嵌入代码</p><p><strong>如下图</strong></p><p><img src="https://pic1.imgdb.cn/item/67a5d67fd0e0a243d4fc8fcb.png"></p><p>然后在自己的.md文件中粘贴代码(这样直接复制话,视频的清晰度低,画面小,还会自动播放)</p><p>接下来的步骤是来解决上述问题的</p><p><strong>原代码如下:</strong></p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;iframe <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;//player.bilibili.com/player.html?isOutside=true&amp;aid=113956102343677&amp;bvid=BV1cJNJe8Env&amp;cid=28242805217&amp;p=1&quot;</span> <span class="hljs-attribute">scrolling</span>=<span class="hljs-string">&quot;no&quot;</span> <span class="hljs-attribute">border</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attribute">frameborder</span>=<span class="hljs-string">&quot;no&quot;</span> <span class="hljs-attribute">framespacing</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attribute">allowfullscreen</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;&lt;/iframe&gt;<br></code></pre></td></tr></table></figure><p><strong>改进后的代码:</strong></p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;iframe <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;//player.bilibili.com/player.html?isOutside=true&amp;aid=113956102343677&amp;bvid=BV1cJNJe8Env&amp;cid=28242805217&amp;p=1&amp;autoplay=0&quot;</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attribute">height</span>=<span class="hljs-string">&quot;500&quot;</span> <span class="hljs-attribute">scrolling</span>=<span class="hljs-string">&quot;no&quot;</span> <span class="hljs-attribute">border</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attribute">frameborder</span>=<span class="hljs-string">&quot;no&quot;</span> <span class="hljs-attribute">framespacing</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attribute">allowfullscreen</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;&lt;/iframe&gt;<br></code></pre></td></tr></table></figure><p>1.在src最后添加&amp;autoplay&#x3D;0可以使视频不会自动播放</p><p>2.在src外添加width&#x3D;”100%” height&#x3D;”500”可以调整网页上视频的大小</p><p>下方为嵌入视频实例(樊振东巴黎决赛)</p><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113138884215496&bvid=BV1dS4CekEyH&cid=25863916065&p=1&autoplay=0" width="100%" height="500" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
             
         </tags>
       
