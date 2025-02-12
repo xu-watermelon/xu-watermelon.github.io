@@ -19,21 +19,22 @@
   <meta name="author" content="xuwatermelon">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="vector存放自定义数据类型">
-<meta property="og:url" content="http://example.com/2025/02/11/vector%E5%AD%98%E6%94%BE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+    <meta name="description" content="stl总结string和vectorstd::string 和 std::vector&lt;char&gt; 在很多基础接口上有相似性，都支持迭代器、元素访问（如通过下标 [] 或 at() 方法）、大小和容量管理（size()、empty()、resize()、capacity() 等）以及在末尾插入（push_back()）和删除（pop_back()）元素等操作。 不过，std::stri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stl总结">
+<meta property="og:url" content="http://example.com/2025/02/12/stl%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="welcome to my blog">
+<meta property="og:description" content="stl总结string和vectorstd::string 和 std::vector&lt;char&gt; 在很多基础接口上有相似性，都支持迭代器、元素访问（如通过下标 [] 或 at() 方法）、大小和容量管理（size()、empty()、resize()、capacity() 等）以及在末尾插入（push_back()）和删除（pop_back()）元素等操作。 不过，std::stri">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-11T07:07:10.000Z">
-<meta property="article:modified_time" content="2025-02-11T07:10:55.716Z">
+<meta property="article:published_time" content="2025-02-12T13:09:17.000Z">
+<meta property="article:modified_time" content="2025-02-12T13:25:28.343Z">
 <meta property="article:author" content="xuwatermelon">
 <meta property="article:tag" content="stl">
-<meta property="article:tag" content="vector">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>vector存放自定义数据类型 - welcome to my blog</title>
+  <title>stl总结 - welcome to my blog</title>
 
 
 
@@ -202,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="vector存放自定义数据类型"></span>
+            <span id="subtitle" data-typed-text="stl总结"></span>
           
         </div>
 
@@ -213,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-11 15:07" pubdate>
-          2025年2月11日 下午
+        <time datetime="2025-02-12 21:09" pubdate>
+          2025年2月12日 晚上
         </time>
       </span>
     
@@ -225,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          343 字
+          615 字
         
       </span>
     
@@ -236,7 +237,7 @@
         
         
         
-          3 分钟
+          6 分钟
         
       </span>
     
@@ -273,16 +274,27 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">vector存放自定义数据类型</h1>
+            <h1 id="seo-header">stl总结</h1>
             
             
               <div class="markdown-body">
                 
-                <hr>
-<span id="more"></span>
-
-<h1 id="vector存放自定义数据类型"><a href="#vector存放自定义数据类型" class="headerlink" title="vector存放自定义数据类型"></a>vector存放自定义数据类型</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta"># <span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta"># <span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">person</span> <br>&#123;<br><span class="hljs-keyword">public</span> :<br>	<span class="hljs-built_in">person</span> (string name,<span class="hljs-type">int</span> age)<br>	&#123;<br>		<span class="hljs-keyword">this</span>-&gt;m_name=name;<br>		<span class="hljs-keyword">this</span>-&gt;m_age=age;<br>	&#125;<br>   string m_name;<br>   <span class="hljs-type">int</span> m_age;<br>   	<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test01</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	vector&lt;person&gt; p;<br>	<span class="hljs-function">person <span class="hljs-title">p1</span><span class="hljs-params">(<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-number">10</span>)</span></span>;<br>	<span class="hljs-function">person <span class="hljs-title">p2</span><span class="hljs-params">(<span class="hljs-string">&quot;b&quot;</span>,<span class="hljs-number">20</span>)</span></span>;<br>	<span class="hljs-function">person <span class="hljs-title">p3</span><span class="hljs-params">(<span class="hljs-string">&quot;c&quot;</span>,<span class="hljs-number">30</span>)</span></span>;<br>	<span class="hljs-function">person <span class="hljs-title">p4</span><span class="hljs-params">(<span class="hljs-string">&quot;d&quot;</span>,<span class="hljs-number">40</span>)</span></span>;<br>	<span class="hljs-function">person <span class="hljs-title">p5</span><span class="hljs-params">(<span class="hljs-string">&quot;e&quot;</span>,<span class="hljs-number">50</span>)</span></span>;<br>	p.<span class="hljs-built_in">push_back</span>(p1);<br>	p.<span class="hljs-built_in">push_back</span>(p2);<br>	p.<span class="hljs-built_in">push_back</span>(p3);<br>	p.<span class="hljs-built_in">push_back</span>(p4);<br>	p.<span class="hljs-built_in">push_back</span>(p5);<br>	<br>	<br>	<br>	<span class="hljs-keyword">for</span>(vector&lt;person&gt;::iterator it=p.<span class="hljs-built_in">begin</span>();it!=p.<span class="hljs-built_in">end</span>();it++)<br>	&#123;<br>		cout&lt;&lt;(*it).m_name&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;(*it).m_age&lt;&lt;endl; <br>	&#125;<br>	<br><span class="hljs-comment">//		for(p.begin();p.begin()!=p.end();p.begin()++)</span><br><span class="hljs-comment">//	&#123;</span><br><span class="hljs-comment">//		cout&lt;&lt;(*p.begin()).m_name&lt;&lt;&quot; &quot;&lt;&lt;(*p.begin()).m_age&lt;&lt;endl; </span><br><span class="hljs-comment">//	&#125;begin()这个函数怎么返回第一个元素的地址,不能执行操作</span><br><span class="hljs-comment">//p.begin() 返回的是一个临时的迭代器对象，对其使用 ++ 操作</span><br><span class="hljs-comment">//符并不会改变容器 p 的状态，因为 p.begin() 每次调用都会返回</span><br><span class="hljs-comment">//一个新的起始迭代器。 </span><br>&#125;<br><br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test02</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>		vector&lt;person*&gt; p;<br>	<span class="hljs-function">person <span class="hljs-title">p1</span><span class="hljs-params">(<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-number">10</span>)</span></span>;<br>	<span class="hljs-function">person <span class="hljs-title">p2</span><span class="hljs-params">(<span class="hljs-string">&quot;b&quot;</span>,<span class="hljs-number">20</span>)</span></span>;<br>	<span class="hljs-function">person <span class="hljs-title">p3</span><span class="hljs-params">(<span class="hljs-string">&quot;c&quot;</span>,<span class="hljs-number">30</span>)</span></span>;<br>	<span class="hljs-function">person <span class="hljs-title">p4</span><span class="hljs-params">(<span class="hljs-string">&quot;d&quot;</span>,<span class="hljs-number">40</span>)</span></span>;<br>	<span class="hljs-function">person <span class="hljs-title">p5</span><span class="hljs-params">(<span class="hljs-string">&quot;e&quot;</span>,<span class="hljs-number">50</span>)</span></span>;<br>	p.<span class="hljs-built_in">push_back</span>(&amp;p1);<br>	p.<span class="hljs-built_in">push_back</span>(&amp;p2);<br>	p.<span class="hljs-built_in">push_back</span>(&amp;p3);<br>	p.<span class="hljs-built_in">push_back</span>(&amp;p4);<br>	p.<span class="hljs-built_in">push_back</span>(&amp;p5);<br>	<br>	<br>	<br>	<span class="hljs-keyword">for</span>(vector&lt;person*&gt;::iterator it=p.<span class="hljs-built_in">begin</span>();it!=p.<span class="hljs-built_in">end</span>();it++)<br>	&#123;<br>		cout&lt;&lt;(*it)-&gt;m_name&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;(*it)-&gt;m_age&lt;&lt;endl; <br>	&#125;<span class="hljs-comment">//it指的是*person的地址,*it指的是person的地址,*it-&gt;m_name指的是元素姓名 </span><br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<br><span class="hljs-comment">//	test01();</span><br>	<span class="hljs-built_in">test02</span>(); <br>	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br> &#125; <br></code></pre></td></tr></table></figure>
-
+                <h1 id="stl总结"><a href="#stl总结" class="headerlink" title="stl总结"></a>stl总结</h1><h3 id="string和vector"><a href="#string和vector" class="headerlink" title="string和vector"></a>string和vector</h3><p><code>std::string</code> 和 <code>std::vector&lt;char&gt;</code> 在很多基础接口上有相似性，都支持迭代器、元素访问（如通过下标 <code>[]</code> 或 <code>at()</code> 方法）、大小和容量管理（<code>size()</code>、<code>empty()</code>、<code>resize()</code>、<code>capacity()</code> 等）以及在末尾插入（<code>push_back()</code>）和删除（<code>pop_back()</code>）元素等操作。 不过，<code>std::string</code> 拥有一系列专门用于处理字符串的功能，例如字符串拼接（使用 <code>+</code> 运算符）、查找子串（<code>find()</code> 方法）、替换子串（<code>replace()</code> 方法）等，这些是 <code>std::vector&lt;char&gt;</code> 所没有的，体现了其作为字符串容器的专业性。</p>
+<h3 id="deque和vector"><a href="#deque和vector" class="headerlink" title="deque和vector"></a>deque和vector</h3><p>不同点： </p>
+<ul>
+<li><strong>存储结构</strong>：<code>std::deque</code> 是双端队列，它由多个连续的内存块组成，通过中控器管理；<code>std::vector</code> 是动态数组，使用一块连续的内存空间存储元素。</li>
+<li><ul>
+<li><strong>头部操作</strong>：<code>deque</code> 在头部插入和删除元素的效率较高，时间复杂度为 $O(1)$；<code>vector</code> 在头部插入或删除元素时，需要将后续所有元素依次向前或向后移动，时间复杂度为 $O(n)$，效率较低。 -</li>
+<li><strong>尾部操作</strong>：通常情况下，二者在尾部进行插入和删除操作的效率都较高，时间复杂度为 $O(1)$。但当 <code>vector</code> 的容量不足时，需要重新分配更大的连续内存空间，并将原有的元素复制到新空间，这一过程时间复杂度为 $O(n)$，效率降低；而 <code>deque</code> 不存在这个问题。 </li>
+<li><ul>
+<li><strong>随机访问</strong>：<code>vector</code> 随机访问元素的效率更高，因为其元素在内存中连续存储，可通过简单的地址偏移直接访问；<code>deque</code> 虽然也支持随机访问，时间复杂度同样为 $O(1)$，但由于需要通过中控器定位不同的内存块，效率相对略低。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="stack和queue"><a href="#stack和queue" class="headerlink" title="stack和queue"></a>stack和queue</h3><p>不同点： - <strong>数据结构特性</strong>：<code>std::stack</code> 是栈，遵循后进先出（LIFO）原则，即最后进入栈的元素最先被取出；<code>std::queue</code> 是队列，遵循先进先出（FIFO）原则，即最先进入队列的元素最先被取出。 </p>
+<p>相同点： - <strong>接口特性</strong>：它们都属于容器适配器，基于其他基础容器（如 <code>deque</code>、<code>vector</code> 等）实现。它们本身没有自己的迭代器，不支持直接的随机访问和遍历操作，主要通过特定的接口（如 <code>stack</code> 的 <code>push()</code>、<code>pop()</code>、<code>top()</code>，<code>queue</code> 的 <code>push()</code>、<code>pop()</code>、<code>front()</code>、<code>back()</code>）来进行元素的插入、删除和访问。，</p>
 
                 
               </div>
@@ -318,8 +330,6 @@
       
         <a href="/tags/stl/" class="print-no-link">#stl</a>
       
-        <a href="/tags/vector/" class="print-no-link">#vector</a>
-      
     </div>
   
 </div>
@@ -330,8 +340,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>vector存放自定义数据类型</div>
-      <div>http://example.com/2025/02/11/vector存放自定义数据类型/</div>
+      <div>stl总结</div>
+      <div>http://example.com/2025/02/12/stl总结/</div>
     </div>
     <div class="license-meta">
       
@@ -343,7 +353,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月11日</div>
+          <div>2025年2月12日</div>
         </div>
       
       
@@ -375,18 +385,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/02/11/%E5%AE%B9%E5%99%A8%E5%B5%8C%E5%A5%97%E5%AE%B9%E5%99%A8/" title="容器嵌套容器">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">容器嵌套容器</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/09/2025-02-09-vector%E5%AD%98%E6%94%BE%E5%86%85%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="vector存放内置数据类型">
-                        <span class="hidden-mobile">vector存放内置数据类型</span>
+                      <a href="/2025/02/11/%E5%AE%B9%E5%99%A8%E5%B5%8C%E5%A5%97%E5%AE%B9%E5%99%A8/" title="容器嵌套容器">
+                        <span class="hidden-mobile">容器嵌套容器</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

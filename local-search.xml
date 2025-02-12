@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>stl总结</title>
+    <link href="/2025/02/12/stl%E6%80%BB%E7%BB%93/"/>
+    <url>/2025/02/12/stl%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="stl总结"><a href="#stl总结" class="headerlink" title="stl总结"></a>stl总结</h1><h3 id="string和vector"><a href="#string和vector" class="headerlink" title="string和vector"></a>string和vector</h3><p><code>std::string</code> 和 <code>std::vector&lt;char&gt;</code> 在很多基础接口上有相似性，都支持迭代器、元素访问（如通过下标 <code>[]</code> 或 <code>at()</code> 方法）、大小和容量管理（<code>size()</code>、<code>empty()</code>、<code>resize()</code>、<code>capacity()</code> 等）以及在末尾插入（<code>push_back()</code>）和删除（<code>pop_back()</code>）元素等操作。 不过，<code>std::string</code> 拥有一系列专门用于处理字符串的功能，例如字符串拼接（使用 <code>+</code> 运算符）、查找子串（<code>find()</code> 方法）、替换子串（<code>replace()</code> 方法）等，这些是 <code>std::vector&lt;char&gt;</code> 所没有的，体现了其作为字符串容器的专业性。</p><h3 id="deque和vector"><a href="#deque和vector" class="headerlink" title="deque和vector"></a>deque和vector</h3><p>不同点： </p><ul><li><strong>存储结构</strong>：<code>std::deque</code> 是双端队列，它由多个连续的内存块组成，通过中控器管理；<code>std::vector</code> 是动态数组，使用一块连续的内存空间存储元素。</li><li><ul><li><strong>头部操作</strong>：<code>deque</code> 在头部插入和删除元素的效率较高，时间复杂度为 $O(1)$；<code>vector</code> 在头部插入或删除元素时，需要将后续所有元素依次向前或向后移动，时间复杂度为 $O(n)$，效率较低。 -</li><li><strong>尾部操作</strong>：通常情况下，二者在尾部进行插入和删除操作的效率都较高，时间复杂度为 $O(1)$。但当 <code>vector</code> 的容量不足时，需要重新分配更大的连续内存空间，并将原有的元素复制到新空间，这一过程时间复杂度为 $O(n)$，效率降低；而 <code>deque</code> 不存在这个问题。 </li><li><ul><li><strong>随机访问</strong>：<code>vector</code> 随机访问元素的效率更高，因为其元素在内存中连续存储，可通过简单的地址偏移直接访问；<code>deque</code> 虽然也支持随机访问，时间复杂度同样为 $O(1)$，但由于需要通过中控器定位不同的内存块，效率相对略低。</li></ul></li></ul></li></ul><h3 id="stack和queue"><a href="#stack和queue" class="headerlink" title="stack和queue"></a>stack和queue</h3><p>不同点： - <strong>数据结构特性</strong>：<code>std::stack</code> 是栈，遵循后进先出（LIFO）原则，即最后进入栈的元素最先被取出；<code>std::queue</code> 是队列，遵循先进先出（FIFO）原则，即最先进入队列的元素最先被取出。 </p><p>相同点： - <strong>接口特性</strong>：它们都属于容器适配器，基于其他基础容器（如 <code>deque</code>、<code>vector</code> 等）实现。它们本身没有自己的迭代器，不支持直接的随机访问和遍历操作，主要通过特定的接口（如 <code>stack</code> 的 <code>push()</code>、<code>pop()</code>、<code>top()</code>，<code>queue</code> 的 <code>push()</code>、<code>pop()</code>、<code>front()</code>、<code>back()</code>）来进行元素的插入、删除和访问。，</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>c++基础语法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>stl</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>容器嵌套容器</title>
+    <link href="/2025/02/11/%E5%AE%B9%E5%99%A8%E5%B5%8C%E5%A5%97%E5%AE%B9%E5%99%A8/"/>
+    <url>/2025/02/11/%E5%AE%B9%E5%99%A8%E5%B5%8C%E5%A5%97%E5%AE%B9%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta"># <span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta"># <span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span> </span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test01</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>vector&lt;vector&lt;<span class="hljs-type">int</span>&gt; &gt; v;<br>vector&lt;<span class="hljs-type">int</span>&gt;p1;<br>vector&lt;<span class="hljs-type">int</span>&gt;p2;<br>vector&lt;<span class="hljs-type">int</span>&gt;p3;<br>vector&lt;<span class="hljs-type">int</span>&gt;p4;<br><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">4</span>;++i)<br>&#123;<br>p<span class="hljs-number">1.</span><span class="hljs-built_in">push_back</span>(i<span class="hljs-number">+1</span>);<br>p<span class="hljs-number">2.</span><span class="hljs-built_in">push_back</span>(i<span class="hljs-number">+2</span>);<br>p<span class="hljs-number">3.</span><span class="hljs-built_in">push_back</span>(i<span class="hljs-number">+3</span>);<br>p<span class="hljs-number">4.</span><span class="hljs-built_in">push_back</span>(i<span class="hljs-number">+4</span>);<br>&#125;<br><br><br><br>v.<span class="hljs-built_in">push_back</span>(p1);<br>v.<span class="hljs-built_in">push_back</span>(p2);<br>v.<span class="hljs-built_in">push_back</span>(p3);<br>v.<span class="hljs-built_in">push_back</span>(p4);<br><br><br><br><span class="hljs-keyword">for</span> (vector&lt;vector&lt;<span class="hljs-type">int</span>&gt; &gt;::iterator it=v.<span class="hljs-built_in">begin</span>();it!=v.<span class="hljs-built_in">end</span>();++it)<br>&#123;<br><span class="hljs-comment">//*it指的是vector&lt;int&gt;容器</span><br><span class="hljs-comment">//小技巧:&lt;&gt;里面是什么数据类型,*it就是什么数据类型  </span><br><span class="hljs-keyword">for</span> (vector&lt;<span class="hljs-type">int</span>&gt;::iterator vit=(*it).<span class="hljs-built_in">begin</span>();vit!=(*it).<span class="hljs-built_in">end</span>();++vit)<br>&#123;<br>cout&lt;&lt;*vit&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br><br> &#125; <br> cout&lt;&lt;endl;<br>&#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><br><br><span class="hljs-built_in">test01</span>();<br><span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span> ;<br> &#125; <br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>c++基础语法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>stl</tag>
+      
+      <tag>string</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>vector存放自定义数据类型</title>
     <link href="/2025/02/11/vector%E5%AD%98%E6%94%BE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
     <url>/2025/02/11/vector%E5%AD%98%E6%94%BE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
