@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>数据类型和完整数据类型的区别</title>
+      <link href="/2025/03/17/2025-03-17-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AE%8C%E6%95%B4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>/2025/03/17/2025-03-17-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AE%8C%E6%95%B4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<hr><span id="more"></span><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>​今天在学<strong>静态链表</strong>的时候发现个问题</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta"># <span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MaxSize 10</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span><br>&#123;<br><span class="hljs-keyword">public</span> :<br><span class="hljs-type">int</span> data;<br><span class="hljs-type">int</span> next;<br>&#125;;<br><br><span class="hljs-keyword">typedef</span> Node SLinkList[MaxSize];<br><br><br><br><span class="hljs-comment">//1.初始化</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InitSList</span><span class="hljs-params">(SLinkList&amp;L)</span></span><br><span class="hljs-function"></span>&#123;<br>L[<span class="hljs-number">0</span>].next=<span class="hljs-number">-1</span>;<span class="hljs-comment">//有标为-1表示已经到达表尾 </span><br><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;MaxSize;++i)<br>&#123;<br>L[i].next=<span class="hljs-number">-2</span>;<span class="hljs-comment">//有标为-2表示当前结点为空 </span><br>&#125;<br><br> &#125;<br></code></pre></td></tr></table></figure><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">typedef <span class="hljs-keyword">Node</span> <span class="hljs-title">SLinkList</span>[MaxSize];<br></code></pre></td></tr></table></figure><p>这个<strong>typedef</strong>给<strong>Node[MaxSize]<strong>起了一个新的名字叫</strong>SLinkList</strong>,这样以后在定义<strong>Node</strong>型的数组的时候就可以直接用<strong>SLinkList L</strong>,来定义数组.</p><p>然后我看到初始化这个函数,我就想着函数参数的**&amp;**是不是可以去掉,然后我去问ai,得到的回答竟然是不可以,然后经过后续的询问我才知道.</p><h3 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h3><p>such as      </p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a[<span class="hljs-number">10</span>];<br></code></pre></td></tr></table></figure><p>这条代码的意思是创建一个<strong>int</strong>型的数组<strong>a</strong>,大小为<strong>10</strong></p><p>如果这样写  </p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span>  test[<span class="hljs-number">10</span>];<br>test b;<br></code></pre></td></tr></table></figure><p>这段代码的最终结果也是创建一个长度为<strong>10</strong>的数组,</p><p>在传参时,如果传<strong>int a[10]<strong>中的</strong>a</strong>,那传的是<strong>a</strong>的地址,因为数组名代表首元素的地址,这个在一开始学习的时候就知道了</p><p>但是就像我们上面说的,虽然a和b代表的都是一个大小为10的数组,但是在传参时他们却不一样了,</p><p>这是因为他们的类型不同,<em><strong>第一个的a是int类型的,第二个b是test(也就是int[10])类型的,他们的类型就不相同</strong></em></p><p>c++的语法是在传完整类型的数组类型的时候是直接传值的,也就是整个复制过去.</p><p><strong>完整数据类型的意思就是 :<em>包含类型和大小</em></strong>            </p><p><strong>第一个a的数据类型</strong>只包含<strong>类型</strong></p><p>第二个b的数据类型包含<strong>类型和大小</strong>,所以在传递的时候必须加引用才可以正确的修改数组.</p><h3 id="简解"><a href="#简解" class="headerlink" title="简解"></a>简解</h3><p>我现在想了一下,就像是</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a;<br></code></pre></td></tr></table></figure><p>他如果直接传a的话,那就变成<strong>值传递</strong>了,函数里面的a和外面的a没有任何关系.</p><p>那完整数据类型也是这个道理</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span>[<span class="hljs-number">10</span>] a;<br></code></pre></td></tr></table></figure><p><strong>上面的int  和下面的int[10]属于这两条代码的相同部位,两个a是变量,所以他们可以相同的来对待.</strong></p><p>再看下</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a[<span class="hljs-number">10</span>];<br></code></pre></td></tr></table></figure><p>他的类型是<strong>int</strong> ,但是他变量<strong>a</strong>的后面有参数,所以他就和上面<strong>int[10] a</strong>有区别了.</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>只要是类型加变量的传的都是参数,也就是值传递.</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a;<br><br><span class="hljs-type">int</span>[<span class="hljs-number">10</span>] a;<br></code></pre></td></tr></table></figure><p><strong>这俩传递的是值</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a[<span class="hljs-number">10</span>];<br></code></pre></td></tr></table></figure><p><strong>这个传的是首地址</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数组 </tag>
+            
+            <tag> 传参 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>The first day I write diary</title>
       <link href="/2025/02/22/%E7%AC%AC%E4%B8%80%E5%A4%A9%E8%8B%B1%E8%AF%AD%E6%97%A5%E8%AE%B0/"/>
       <url>/2025/02/22/%E7%AC%AC%E4%B8%80%E5%A4%A9%E8%8B%B1%E8%AF%AD%E6%97%A5%E8%AE%B0/</url>
@@ -347,6 +374,19 @@
             <tag> 雪景 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>新年雪景(注徐大师拍摄)（照片上传test）</title>
+      <link href="/2025/02/07/%E6%96%B0%E5%B9%B4%E9%9B%AA%E6%99%AF-%E6%B3%A8%E5%BE%90%E5%A4%A7%E5%B8%88%E6%8B%8D%E6%91%84-%EF%BC%88%E7%85%A7%E7%89%87%E4%B8%8A%E4%BC%A0test%EF%BC%89/"/>
+      <url>/2025/02/07/%E6%96%B0%E5%B9%B4%E9%9B%AA%E6%99%AF-%E6%B3%A8%E5%BE%90%E5%A4%A7%E5%B8%88%E6%8B%8D%E6%91%84-%EF%BC%88%E7%85%A7%E7%89%87%E4%B8%8A%E4%BC%A0test%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       
     </entry>
     
