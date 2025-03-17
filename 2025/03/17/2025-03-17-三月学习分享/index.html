@@ -20,20 +20,21 @@
   <meta name="keywords" content="">
   
     <meta property="og:type" content="article">
-<meta property="og:title" content="数据类型和完整数据类型的区别">
-<meta property="og:url" content="http://example.com/2025/03/17/2025-03-17-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AE%8C%E6%95%B4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
+<meta property="og:title" content="三月学习分享">
+<meta property="og:url" content="http://example.com/2025/03/17/2025-03-17-%E4%B8%89%E6%9C%88%E5%AD%A6%E4%B9%A0%E5%88%86%E4%BA%AB/index.html">
 <meta property="og:site_name" content="welcome to my blog">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-17T10:57:14.000Z">
-<meta property="article:modified_time" content="2025-03-17T10:15:03.517Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250318073255379.png">
+<meta property="article:published_time" content="2025-03-17T14:33:35.000Z">
+<meta property="article:modified_time" content="2025-03-17T23:34:02.489Z">
 <meta property="article:author" content="xuwatermelon">
-<meta property="article:tag" content="数组">
-<meta property="article:tag" content="传参">
+<meta property="article:tag" content="日记，数据结构，学习进度">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250318073255379.png">
   
   
   
-  <title>数据类型和完整数据类型的区别 - welcome to my blog</title>
+  <title>三月学习分享 - welcome to my blog</title>
 
 
 
@@ -211,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数据类型和完整数据类型的区别"></span>
+            <span id="subtitle" data-typed-text="三月学习分享"></span>
           
         </div>
 
@@ -222,7 +223,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-17 18:57" pubdate>
+        <time datetime="2025-03-17 22:33" pubdate>
           2025年3月17日 晚上
         </time>
       </span>
@@ -234,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          654 字
+          570 字
         
       </span>
     
@@ -245,7 +246,7 @@
         
         
         
-          6 分钟
+          5 分钟
         
       </span>
     
@@ -282,55 +283,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数据类型和完整数据类型的区别</h1>
+            <h1 id="seo-header">三月学习分享</h1>
             
             
               <div class="markdown-body">
                 
-                <hr>
+                <p><img src="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250318073255379.png" srcset="/img/loading.gif" lazyload alt="添柴摄影师"></p>
+<hr>
 <span id="more"></span>
 
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>​	今天在学<strong>静态链表</strong>的时候发现个问题</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta"># <span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MaxSize 10</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span><br>&#123;<br><span class="hljs-keyword">public</span> :<br>	<span class="hljs-type">int</span> data;<br>	<span class="hljs-type">int</span> next;	<br>&#125;;<br><br><span class="hljs-keyword">typedef</span> Node SLinkList[MaxSize];<br><br><br><br><span class="hljs-comment">//1.初始化</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InitSList</span><span class="hljs-params">(SLinkList&amp;L)</span></span><br><span class="hljs-function"></span>&#123;<br>	L[<span class="hljs-number">0</span>].next=<span class="hljs-number">-1</span>;		<span class="hljs-comment">//有标为-1表示已经到达表尾 </span><br>	<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;MaxSize;++i)<br>	&#123;<br>		L[i].next=<span class="hljs-number">-2</span>;	<span class="hljs-comment">//有标为-2表示当前结点为空 </span><br>	&#125;<br><br> &#125;<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">typedef <span class="hljs-keyword">Node</span> <span class="hljs-title">SLinkList</span>[MaxSize];<br></code></pre></td></tr></table></figure>
-
-<p>这个<strong>typedef</strong>给<strong>Node[MaxSize]<strong>起了一个新的名字叫</strong>SLinkList</strong>,这样以后在定义<strong>Node</strong>型的数组的时候就可以直接用<strong>SLinkList L</strong>,来定义数组.</p>
-<p>然后我看到初始化这个函数,我就想着函数参数的**&amp;**是不是可以去掉,然后我去问ai,得到的回答竟然是不可以,然后经过后续的询问我才知道.</p>
-<h3 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h3><p>such as      </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a[<span class="hljs-number">10</span>];<br></code></pre></td></tr></table></figure>
-
-<p>这条代码的意思是创建一个<strong>int</strong>型的数组<strong>a</strong>,大小为<strong>10</strong></p>
-<p>如果这样写  </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span>  test[<span class="hljs-number">10</span>];<br>test b;<br></code></pre></td></tr></table></figure>
-
-<p>这段代码的最终结果也是创建一个长度为<strong>10</strong>的数组,</p>
-<p>在传参时,如果传<strong>int a[10]<strong>中的</strong>a</strong>,那传的是<strong>a</strong>的地址,因为数组名代表首元素的地址,这个在一开始学习的时候就知道了</p>
-<p>但是就像我们上面说的,虽然a和b代表的都是一个大小为10的数组,但是在传参时他们却不一样了,</p>
-<p>这是因为他们的类型不同,<em><strong>第一个的a是int类型的,第二个b是test(也就是int[10])类型的,他们的类型就不相同</strong></em></p>
-<p>c++的语法是在传完整类型的数组类型的时候是直接传值的,也就是整个复制过去.</p>
-<p><strong>完整数据类型的意思就是 :<em>包含类型和大小</em></strong>            </p>
-<p><strong>第一个a的数据类型</strong>只包含<strong>类型</strong></p>
-<p>第二个b的数据类型包含<strong>类型和大小</strong>,所以在传递的时候必须加引用才可以正确的修改数组.</p>
-<h3 id="简解"><a href="#简解" class="headerlink" title="简解"></a>简解</h3><p>我现在想了一下,就像是</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a;<br></code></pre></td></tr></table></figure>
-
-<p>他如果直接传a的话,那就变成<strong>值传递</strong>了,函数里面的a和外面的a没有任何关系.</p>
-<p>那完整数据类型也是这个道理</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span>[<span class="hljs-number">10</span>] a;<br></code></pre></td></tr></table></figure>
-
-<p><strong>上面的int  和下面的int[10]属于这两条代码的相同部位,两个a是变量,所以他们可以相同的来对待.</strong></p>
-<p>再看下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a[<span class="hljs-number">10</span>];<br></code></pre></td></tr></table></figure>
-
-<p>他的类型是<strong>int</strong> ,但是他变量<strong>a</strong>的后面有参数,所以他就和上面<strong>int[10] a</strong>有区别了.</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>只要是类型加变量的传的都是参数,也就是值传递.</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a;<br><br><span class="hljs-type">int</span>[<span class="hljs-number">10</span>] a;<br></code></pre></td></tr></table></figure>
-
-<p><strong>这俩传递的是值</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a[<span class="hljs-number">10</span>];<br></code></pre></td></tr></table></figure>
-
-<p><strong>这个传的是首地址</strong></p>
+<p>也是很就没写学习进度了,刚好一个月,哈哈哈哈哈哈,是不是可以考虑给他变成每月学习总结,感觉一周有点太短了,要写的话就太零碎了.</p>
+<p>OK,做好决定了,改成每月学习进度,其实还挺巧的,到今天刚好一个月,今天刚好有时间写,已经时隔一个月没写博客了,今天赶紧更新更新.</p>
+<p>这个月都干了啥呢,首先是把上个学期的高数看了看,超级多,从第五章看到第八章,看的脑瓜子嗡嗡的,上个月事情也有点多,但是看起来还是干了不少事的,除了高数还有线代,还有大物,基本上都看了一点,都赶上上课的进度了.</p>
+<p>然后从周六开始吧,我开始看数据结构,现在把第一章线性表全给实现了一遍,其实还挺有意思的,我准备看完数据结构再看计网,先这样安排吧,剩下的时间就写点小项目,然后把学校的课跟上,一定不能挂科,要不到后面精力就被分散了.</p>
+<p>我从明天开始准备看英语,把他抓起来,一定要抓起来,养成习惯,其实我现在挺喜欢写代码的,感觉自己实现一个功能特别有意思,希望我对学英语也可以变成这种态度.</p>
+<p>OK,就是这些了.猜猜我刚刚看啥了,我刚刚看了下我们专业现在大二的课表,我发现大二开的课是计网 计组 操作系统,嗨,就是没有数据结构.算了,学了其实挺有用了,因为准备大二参加圈钱杯呢,不知道我的钱会不会被圈走哈哈哈哈哈哈哈哈,提前学学还是挺好的  ,而且这个王道考研这个教程,差不多可能一个多月就看完了,现在才三月,还有三个月呢,小问题,估计计网也能看的差不多,然后暑假还有两个月呢,其实可以把四大件学的差不多呢,包可以的,顺便暑假还可以看看单片机.</p>
 
                 
               </div>
@@ -349,7 +316,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  <a href="/categories/%E6%AF%8F%E6%9C%88%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/" class="category-chain-item">每月学习进度</a>
   
   
 
@@ -364,9 +331,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%95%B0%E7%BB%84/" class="print-no-link">#数组</a>
-      
-        <a href="/tags/%E4%BC%A0%E5%8F%82/" class="print-no-link">#传参</a>
+        <a href="/tags/%E6%97%A5%E8%AE%B0%EF%BC%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/" class="print-no-link">#日记，数据结构，学习进度</a>
       
     </div>
   
@@ -378,8 +343,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数据类型和完整数据类型的区别</div>
-      <div>http://example.com/2025/03/17/2025-03-17-数据类型和完整数据类型的区别/</div>
+      <div>三月学习分享</div>
+      <div>http://example.com/2025/03/17/2025-03-17-三月学习分享/</div>
     </div>
     <div class="license-meta">
       
@@ -423,18 +388,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/17/2025-03-17-%E4%B8%89%E6%9C%88%E5%AD%A6%E4%B9%A0%E5%88%86%E4%BA%AB/" title="三月学习分享">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">三月学习分享</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/22/%E7%AC%AC%E4%B8%80%E5%A4%A9%E8%8B%B1%E8%AF%AD%E6%97%A5%E8%AE%B0/" title="The first day I write diary">
-                        <span class="hidden-mobile">The first day I write diary</span>
+                      <a href="/2025/03/17/2025-03-17-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AE%8C%E6%95%B4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB/" title="数据类型和完整数据类型的区别">
+                        <span class="hidden-mobile">数据类型和完整数据类型的区别</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
