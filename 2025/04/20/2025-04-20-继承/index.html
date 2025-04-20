@@ -10,17 +10,29 @@
     <meta name="copyright" content="xuwatermelon">
         <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     <meta name="description" content="">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2025/02/index.html">
+    <meta name="description" content="一个子类只能继承一个父类,  可以多层继承  最终的父类是object  1.继承的概念一个子类只能继承一个父类,不能像c++一样继承多个父类. 子类的父类也有自己的父类,可以连续继承. 所有的类都有一个共同的父类object 2.继承的规则一共有两种类型:private和非私有 1.构造函数构造函数在继承的时候,不管父类的构造函数是私有还是非私有,都不可以被子类继承 为什么构造函数不能继承？ 构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="继承">
+<meta property="og:url" content="http://example.com/2025/04/20/2025-04-20-%E7%BB%A7%E6%89%BF/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一个子类只能继承一个父类,  可以多层继承  最终的父类是object  1.继承的概念一个子类只能继承一个父类,不能像c++一样继承多个父类. 子类的父类也有自己的父类,可以连续继承. 所有的类都有一个共同的父类object 2.继承的规则一共有两种类型:private和非私有 1.构造函数构造函数在继承的时候,不管父类的构造函数是私有还是非私有,都不可以被子类继承 为什么构造函数不能继承？ 构">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420182726244.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420182557126.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420183320821.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420202756458.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420212042014.png">
+<meta property="article:published_time" content="2025-04-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-20T13:21:06.679Z">
 <meta property="article:author" content="xuwatermelon">
+<meta property="article:tag" content="技术，java">
+<meta property="article:tag" content="继承">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420182726244.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/assets/favicon.ico">
-    <title>xu-watermelon的分享站</title>
+    <title>继承 · xu-watermelon的分享站</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -208,6 +220,7 @@
             document.write('<script src="/lib/jquery.min.js" />')
         }
     </script>
+        <body class="post-body">
         <!-- header -->
         <header class="header header-mobile">
     <!-- top read progress line -->
@@ -237,7 +250,7 @@
             <a href="/">xu-watermelon的分享站</a>
         </div>
         <div class="post-title header-element">
-            <a href="#" class="post-name"></a>
+            <a href="#" class="post-name">继承</a>
         </div>
     </div>
 </header>
@@ -254,20 +267,61 @@
 
         <!-- wrapper -->
         <div class="wrapper">
-            <div class="site-intro" style="">
+            <div class="site-intro" style="    height:50vh;
+">
     <!-- 主页  -->
+    <!-- 404页  -->
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+                继承
+            <!-- 404 -->
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
+            <!-- 404 -->
         </p>
         <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="技术，java">技术，java</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="继承">继承</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">466</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2025/04/20</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
     </div>
 </div>
 
@@ -396,129 +450,81 @@
 
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
             <div class="container container-unloaded">
-                <main class="main index-page">
-        <article class="index-post">
-            <a class="abstract-title" href="/2025/02/18/2025-02-18-%E5%BC%80%E8%AE%BE%E6%AF%8F%E6%9C%88%E5%AD%A6%E4%B9%A0%E6%88%90%E6%9E%9C%E5%88%86%E4%BA%AB%E5%88%86%E7%B1%BB(%E7%AC%AC%E4%B8%80%E5%A4%A92025.2.18)/">
-                <span class="abstract-title-text">开设每月学习成果分享分类(第一天2025.2.18)</span>
-            </a>
-            <div class="abstract-content">
-                <hr>
-            </div>
-            <!-- read more -->
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/04/19">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/02/18</span>
-                </div>
-                <!-- tags -->
-                    <div class="abstract-tags" >
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习进度，月记">学习进度，月记</a>
-</div>
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>一个子类只能继承一个父类,</p>
+<p> 可以多层继承</p>
+<p> 最终的父类是object</p>
+<hr>
+<h2 id="1-继承的概念"><a href="#1-继承的概念" class="headerlink" title="1.继承的概念"></a>1.继承的概念</h2><p>一个子类只能继承一个父类,不能像c++一样继承多个父类.</p>
+<p>子类的父类也有自己的父类,可以连续继承.</p>
+<p>所有的类都有一个共同的父类object</p>
+<h2 id="2-继承的规则"><a href="#2-继承的规则" class="headerlink" title="2.继承的规则"></a>2.继承的规则</h2><p>一共有两种类型:<strong>private</strong>和<strong>非私有</strong></p>
+<h3 id="1-构造函数"><a href="#1-构造函数" class="headerlink" title="1.构造函数"></a>1.构造函数</h3><p><strong>构造函数在继承的时候,不管父类的构造函数是私有还是非私有,都不可以被子类继承</strong></p>
+<h4 id="为什么构造函数不能继承？"><a href="#为什么构造函数不能继承？" class="headerlink" title="为什么构造函数不能继承？"></a><strong>为什么构造函数不能继承？</strong></h4><ol>
+<li><strong>构造函数不是类成员方法</strong><br>它属于类本身的初始化机制，不是对象的方法，因此不存在”继承”的概念。</li>
+<li><strong>构造函数名必须与类名相同</strong><br>子类名 ≠ 父类名，语法上就无法直接继承父类构造函数。</li>
+<li><strong>私有构造函数的特殊作用</strong><br>如果父类构造函数是 <code>private</code>，通常表示禁止直接实例化（如单例模式），如果允许继承会破坏这种设计。</li>
+</ol>
+<h3 id="2-成员变量"><a href="#2-成员变量" class="headerlink" title="2.成员变量"></a>2.成员变量</h3><p><strong>不论是私有还是非私有都可以被继承</strong></p>
+<p><strong>只能通过继承的非私有方法来操作</strong></p>
+<h3 id="3-成员方法"><a href="#3-成员方法" class="headerlink" title="3.成员方法"></a>3.成员方法</h3><p><strong>私有的不能继承</strong></p>
+<p><strong>非私有的可以继承</strong></p>
+<h2 id="3-继承访问特点"><a href="#3-继承访问特点" class="headerlink" title="3.继承访问特点"></a>3.继承访问特点</h2><h3 id="1-变量"><a href="#1-变量" class="headerlink" title="1.变量"></a>1.变量</h3><h4 id="就近原则"><a href="#就近原则" class="headerlink" title="就近原则"></a><strong>就近原则</strong></h4><p>this是在本类成员找</p>
+<p>super是在父类中找</p>
+<p>直接写变量名,他会在里他最近的找,接着是本类成员,然后是父类成员</p>
+<p><img src="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420182726244.png" alt="image-20250420182726244"></p>
+<p><img src="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420182557126.png" alt="image-20250420182557126"></p>
+<h3 id="2-成员方法"><a href="#2-成员方法" class="headerlink" title="2.成员方法"></a>2.成员方法</h3><p><strong>一样是就近原则,首先查看本类,如果本类没有就去查看父类</strong></p>
+<p><strong>this.方法,首先查看本类,如果本类没有就去查看父类</strong></p>
+<p><strong>super.方法,直接查看父类</strong></p>
+<p><img src="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420183320821.png" alt="image-20250420183320821"></p>
+<h3 id="1-方法的重写"><a href="#1-方法的重写" class="headerlink" title="1.方法的重写"></a>1.方法的重写</h3><p><img src="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420202756458.png" alt="image-20250420202756458"></p>
+<h2 id="3-构造方法"><a href="#3-构造方法" class="headerlink" title="3.构造方法"></a>3.构造方法</h2><p><img src="https://raw.githubusercontent.com/xu-watermelon/myblog-images/main/image-20250420212042014.png" alt="image-20250420212042014"></p>
 
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
+    </article>
+    <!-- license -->
+        <div class="license-wrapper">
+            <p>Author：<a href="http://example.com">xuwatermelon</a>
+            <p>Link：<a href="http://example.com/2025/04/20/2025-04-20-%E7%BB%A7%E6%89%BF/">http://example.com/2025/04/20/2025-04-20-%E7%BB%A7%E6%89%BF/</a>
+            <p>Publish date：<a href="http://example.com/2025/04/20/2025-04-20-%E7%BB%A7%E6%89%BF/">April 20th 2025, 12:00:00 am</a>
+            <p>Update date：<a href="http://example.com/2025/04/20/2025-04-20-%E7%BB%A7%E6%89%BF/">April 20th 2025, 9:21:06 pm</a>
+            <p>License：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2025/04/20/2025-04-20-java%E4%B8%AD%E7%9A%84main%E7%9A%84%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/" title="java中的main的格式说明">
+                    <div class="nextTitle">java中的main的格式说明</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2025/03/17/%E4%B8%89%E6%9C%88%E5%AD%A6%E4%B9%A0%E5%88%86%E4%BA%AB/" title="三月学习分享">
+                    <div class="prevTitle">三月学习分享</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
             
-        <article class="index-post">
-            <a class="abstract-title" href="/2025/02/16/2025-02-16-%E6%BC%AF%E6%B2%B3%E6%B8%B8/">
-                <span class="abstract-title-text">漯河游</span>
-            </a>
-            <div class="abstract-content">
-                
-
-
-
-
-
-
-
-
-            </div>
-            <!-- read more -->
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/04/19">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/02/16</span>
-                </div>
-                <!-- tags -->
-                    <div class="abstract-tags" >
-        <a class="post-tag" href="javascript:void(0);" data-tags="风景，旅游，照片">风景，旅游，照片</a>
-</div>
-
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-        <article class="index-post">
-            <a class="abstract-title" href="/2025/02/12/2025-02-12-stl%E6%80%BB%E7%BB%93/">
-                <span class="abstract-title-text">stl总结</span>
-            </a>
-            <div class="abstract-content">
-                <hr>
-            </div>
-            <!-- read more -->
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/04/19">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/02/12</span>
-                </div>
-                <!-- tags -->
-                    <div class="abstract-tags" >
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++，stl">c++，stl</a>
-        <a class="post-tag" href="javascript:void(0);" data-tags="技术">技术</a>
-</div>
-
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-        <article class="index-post">
-            <a class="abstract-title" href="/2025/02/07/2025-02-07-%E5%9C%A8blog%E4%B8%8A%E4%BC%A0%E8%A7%86%E9%A2%91/">
-                <span class="abstract-title-text">在blog上传视频</span>
-            </a>
-            <div class="abstract-content">
-                <hr>
-            </div>
-            <!-- read more -->
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/04/19">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/02/07</span>
-                </div>
-                <!-- tags -->
-                    <div class="abstract-tags" >
-        <a class="post-tag" href="javascript:void(0);" data-tags="技术，博客">技术，博客</a>
-</div>
-
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
             
-        <article class="index-post">
-            <a class="abstract-title" href="/2025/02/07/2025-02-07-%E6%96%B0%E5%B9%B4%E9%9B%AA%E6%99%AF(%E6%B3%A8%E5%BE%90%E5%A4%A7%E5%B8%88%E6%8B%8D%E6%91%84)%EF%BC%88%E7%85%A7%E7%89%87%E4%B8%8A%E4%BC%A0test%EF%BC%89/">
-                <span class="abstract-title-text">新年雪景(注徐大师拍摄)（照片上传test）</span>
-            </a>
-            <div class="abstract-content">
-                
+            
+            <!-- utteranc评论 -->
 
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
 
-
-
-
-            </div>
-            <!-- read more -->
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/04/19">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/02/07</span>
-                </div>
-                <!-- tags -->
-                    <div class="abstract-tags" >
-        <a class="post-tag" href="javascript:void(0);" data-tags="风景，日常">风景，日常</a>
-</div>
-
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    <!-- paginator  -->
+            
+            
+            
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
 </main>
 
                 <!-- profile -->
@@ -546,6 +552,13 @@
 
         </div>
         <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BB%A7%E6%89%BF%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">1.继承的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%A7%E6%89%BF%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">2.</span> <span class="toc-text">2.继承的规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">1.构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8D%E8%83%BD%E7%BB%A7%E6%89%BF%EF%BC%9F"><span class="toc-number">2.1.1.</span> <span class="toc-text">为什么构造函数不能继承？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">2.2.</span> <span class="toc-text">2.成员变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">3.成员方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BB%A7%E6%89%BF%E8%AE%BF%E9%97%AE%E7%89%B9%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">3.继承访问特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%98%E9%87%8F"><span class="toc-number">3.1.</span> <span class="toc-text">1.变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%B1%E8%BF%91%E5%8E%9F%E5%88%99"><span class="toc-number">3.1.1.</span> <span class="toc-text">就近原则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">2.成员方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99"><span class="toc-number">3.3.</span> <span class="toc-text">1.方法的重写</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">3.构造方法</span></a></li></ol>
+            </div>
         <!-- sidebar -->
         <div class="sidebar sidebar-hide">
     <ul class="sidebar-tabs sidebar-tabs-active-0">
@@ -726,6 +739,7 @@
         <!-- busuanzi -->
             <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
         <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
         <!-- mermaid -->
     </body>
 </html>
