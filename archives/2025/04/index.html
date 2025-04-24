@@ -419,20 +419,13 @@
             </div>
         </article>
         <div class="index-post-divider"></div>
-            
         <article class="index-post">
             <a class="abstract-title" href="/2025/04/24/2025-04-24-Object%E4%B8%AD%E7%9A%84toString/">
                 <span class="abstract-title-text">Object中的toString</span>
             </a>
             <div class="abstract-content">
-                
-
-
-
-1234567891011public static void main(String[]args)&#123;		Student stu=new Student();		sout(stu.toString());    //输出结果为包名+类名+@+地址值    	sout(stu);    //直接输出stu的结果和上面stu调用toString的结果一毛一样    这是为什么呢&#125;
-
-这是toString的源代码
-1 public String toString() &#123;        return getClass().getName() + &quot;...
+                <p><strong>输出引用数据类型的时候,println中调用了toString</strong></p>
+<hr>
             </div>
             <!-- read more -->
             <div class="abstract-post-meta">
