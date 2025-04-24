@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/%E7%BB%A7%E6%89%BF/index.html">
+<meta property="og:url" content="http://example.com/tags/Object%EF%BC%8Cjava/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="xuwatermelon">
@@ -398,23 +398,51 @@
             <div class="container container-unloaded">
                 <main class="main index-page">
         <article class="index-post">
-            <a class="abstract-title" href="/2025/04/20/2025-04-20-%E7%BB%A7%E6%89%BF/">
-                <span class="abstract-title-text">继承</span>
+            <a class="abstract-title" href="/2025/04/24/2025-04-24-Object%E4%B8%AD%E7%9A%84equals/">
+                <span class="abstract-title-text">Object中的equals</span>
             </a>
             <div class="abstract-content">
-                <p>1.一个子类只能继承一个父类       2.可以多层继承             3. 最终的父类是object</p>
+                <p><strong>Object中的equals是直接比较地址值的</strong></p>
 <hr>
             </div>
             <!-- read more -->
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2025/04/20">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/04/20</span>
+                <div class="abstract-date" title="Last updated: 2025/04/25">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/04/24</span>
                 </div>
                 <!-- tags -->
                     <div class="abstract-tags" >
-        <a class="post-tag" href="javascript:void(0);" data-tags="技术，java">技术，java</a>
-        <a class="post-tag" href="javascript:void(0);" data-tags="继承">继承</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Object，java">Object，java</a>
+</div>
+
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+            
+        <article class="index-post">
+            <a class="abstract-title" href="/2025/04/24/2025-04-24-Object%E4%B8%AD%E7%9A%84toString/">
+                <span class="abstract-title-text">Object中的toString</span>
+            </a>
+            <div class="abstract-content">
+                
+
+
+
+1234567891011public static void main(String[]args)&#123;		Student stu=new Student();		sout(stu.toString());    //输出结果为包名+类名+@+地址值    	sout(stu);    //直接输出stu的结果和上面stu调用toString的结果一毛一样    这是为什么呢&#125;
+
+这是toString的源代码
+1 public String toString() &#123;        return getClass().getName() + &quot;...
+            </div>
+            <!-- read more -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2025/04/25">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/04/24</span>
+                </div>
+                <!-- tags -->
+                    <div class="abstract-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="Object，java">Object，java</a>
 </div>
 
             </div>
